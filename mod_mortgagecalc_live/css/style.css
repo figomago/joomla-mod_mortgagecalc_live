@@ -1,0 +1,62 @@
+
+/**
+  @copyright Copyright (c)2013 Figomago <http://figomago.wordpress.com> 
+  @license : GNU General Public License v3 or later
+----------------------------------------------------------------------- */
+
+#mcalcLive{
+	margin: 10px 0px;
+    width: 99%;
+}
+
+#mcalcLive table{
+	padding: 5px;
+}
+#mcalcLive tbody {
+  display: table-row-group;
+  vertical-align: middle;
+  border-color: inherit;
+}
+
+#mcalcLive .clear{
+	clear: both;
+}
+
+.mcalcLive_sidebar #mcalcLive{
+	margin: 0px;
+}
+
+.mcalcLive_label{
+	margin-right: 10px;
+}
+
+.mcalcLive_field{
+}
+
+.mcalcLive_sidebar span{
+	display: block;
+	margin-right: 0px;
+}
+
+.mcalcLive_sidebar td{
+	display: block;
+	float: left;
+	margin-right: 15px;
+}
+
+.mcalcLive_sidebar .mcalcLive_label{
+	margin-top: 5px;
+}
+
+.mcalcLive_text {
+  display: block;
+  text-align: center;
+  font-size: 80%;
+}
+
+.mcalcLive_footer{
+	font-size:10px;
+	text-align:center;
+	line-height: 10px;
+	font-style: italic;
+}

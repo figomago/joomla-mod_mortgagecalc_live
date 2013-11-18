@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<install version="1.5" type="module" client="site">
+  <name>Instant Mortgage Calculator</name>
+  <author>Figomago</author>
+  <authorEmail>figo.mago@gmail.com</authorEmail>
+  <authorUrl>http://figomago.wordpress.com</authorUrl>
+  <creationDate>Nov 2013</creationDate>
+  <copyright>Sifiso Khumalo (figomago)</copyright>
+  <license>GNU/GPL v3</license>
+  <version>1.1.0</version>
+  <description>Instant mortgage calculator</description>
+  <files>
+    <filename module="mod_mortgagecalc_live">mod_mortgagecalc_live.php</filename>
+    <filename module="mod_mortgagecalc_live">helper.php</filename>
+    <filename module="mod_mortgagecalc_live">index.htm</filename>
+    <folder module="mod_mortgagecalc_live">css</folder>
+    <folder module="mod_mortgagecalc_live">js</folder>
+    <folder module="mod_mortgagecalc_live">tmpl</folder>
+  </files>
+  <languages>
+    <language tag="en-GB">languages/en-GB.mod_mortgagecalc_live.ini</language>
+    <language tag="en-GB">languages/en-GB.mod_mortgagecalc_live.sys.ini</language>
+  </languages>
+  <params>
+    <param name="moduleclass_sfx" type="text" default="" label="MOD_MORTGAGECALC_LIVE_SFX" description="PARAMMODULECLASSSUFFIX" />
+    <param name="price" type="text" default="500,000" label="MOD_MORTGAGECALC_LIVE_PRICE" description="MOD_MORTGAGECALC_LIVE_PRICE_DESCR" />
+    <param name="deposit" type="text" default="100,000" label="MOD_MORTGAGECALC_LIVE_DEPOSIT" description="MOD_MORTGAGECALC_LIVE_DEPOSIT_DESCR" />
+    <param name="interest" type="text" default="8.5" label="MOD_MORTGAGECALC_LIVE_INTEREST" description="MOD_MORTGAGECALC_LIVE_INTEREST_DESCR" />
+    <param name="years" type="text" default="30" label="MOD_MORTGAGECALC_LIVE_DURATION" description="MOD_MORTGAGECALC_LIVE_DURATION_DESCR" />
+    <param name="curr_symbol" type="text" default="$" label="MOD_MORTGAGECALC_CURR_SYMBOL" description="MOD_MORTGAGECALC_CURR_SYMBOL_DESCR" />
+    <param name="showsymbol" type="radio" default="1" label="MOD_MORTGAGECALC_LIVE_SHOWSYM" description="MOD_MORTGAGECALC_LIVE_SHOWSYM_DESCR">
+			<option value="0">MOD_MORTGAGECALC_LIVE_NO</option>
+			<option value="1">MOD_MORTGAGECALC_LIVE_YES</option>
+	</param>
+    <param name="showfooter" type="radio" default="1" label="MOD_MORTGAGECALC_LIVE_SHOWHIDE" description="MOD_MORTGAGECALC_LIVE_SHOWHIDE_DESCR">
+			<option value="0">MOD_MORTGAGECALC_LIVE_NO</option>
+			<option value="1">MOD_MORTGAGECALC_LIVE_YES</option>
+	</param>
+  </params>
+  <params group="advanced">
+    <param name="cache" type="list" default="1" label="MOD_MORTGAGECALC_LIVE_CACHING" description="MOD_MORTGAGECALC_LIVE_CACHING_DESCR">
+    	<option value="1">MOD_MORTGAGECALC_LIVE_CACHING_GLBL</option>
+    	<option value="0">MOD_MORTGAGECALC_LIVE_CACHING_NONE</option>
+    </param>
+    <param name="cache_time" type="text" default="900" label="MOD_MORTGAGECALC_LIVE_CACHING_TIME" description="MOD_MORTGAGECALC_LIVE_CACHING_TIME_DESCR" />
+  </params>
+  <config>
+    <fields name="params">
+      <fieldset name="basic" label="MOD_MORTGAGECALC_LIVE_PARAMS" description="MOD_MORTGAGECALC_LIVE_SETTINGS">
+        <field name="price" type="text" default="700,000" label="MOD_MORTGAGECALC_LIVE_PRICE" description="MOD_MORTGAGECALC_LIVE_PRICE_DESCR"></field>
+        <field name="deposit" type="text" default="90,000" label="MOD_MORTGAGECALC_LIVE_DEPOSIT" description="MOD_MORTGAGECALC_LIVE_DEPOSIT_DESCR"></field>
+        <field name="interest" type="text" default="8.5" label="MOD_MORTGAGECALC_LIVE_INTEREST_PARAMS" description="MOD_MORTGAGECALC_LIVE_INTEREST_DESCR"></field>
+        <field name="years" type="text" default="30" label="MOD_MORTGAGECALC_LIVE_DURATION" description="MOD_MORTGAGECALC_LIVE_DURATION_DESCR"></field>
+        <field name="curr_symbol" type="text" default="$" label="MOD_MORTGAGECALC_CURR_SYMBOL" description="MOD_MORTGAGECALC_CURR_SYMBOL_DESCR"></field>
+        <field name="showsymbol" type="radio" default="1" label="MOD_MORTGAGECALC_LIVE_SHOWSYM" description="MOD_MORTGAGECALC_LIVE_SHOWSYM_DESCR">
+			<option value="0">MOD_MORTGAGECALC_LIVE_NO</option>
+			<option value="1">MOD_MORTGAGECALC_LIVE_YES</option>
+    	</field>
+        <field name="showfooter" type="radio" default="1" label="MOD_MORTGAGECALC_LIVE_SHOWHIDE" description="MOD_MORTGAGECALC_LIVE_SHOWHIDE_DESCR">
+			<option value="0">MOD_MORTGAGECALC_LIVE_NO</option>
+			<option value="1">MOD_MORTGAGECALC_LIVE_YES</option>
+    	</field>
+      </fieldset>
+      <fieldset name="advanced">
+    		<field
+    			name="layout"
+    			type="modulelayout"
+    			label="JFIELD_ALT_LAYOUT_LABEL"
+    			description="JFIELD_ALT_MODULE_LAYOUT_DESC" />
+
+    		<field
+    			name="moduleclass_sfx"
+    			type="text"
+    			label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+    			description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+
+    		<field
+    			name="cache"
+    			type="list"
+    			default="1"
+    			label="COM_MODULES_FIELD_CACHING_LABEL"
+    			description="COM_MODULES_FIELD_CACHING_DESC">
+    			<option
+    				value="1">JGLOBAL_USE_GLOBAL</option>
+    			<option
+    				value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+    		</field>
+
+    		<field
+    			name="cache_time"
+    			type="text"
+    			default="900"
+    			label="COM_MODULES_FIELD_CACHE_TIME_LABEL"
+    			description="COM_MODULES_FIELD_CACHE_TIME_DESC" />
+    		<field
+    			name="cachemode"
+    			type="hidden"
+    			default="static">
+    			<option
+    				value="static"></option>
+    		</field>
+    	</fieldset>
+    </fields>
+  </config>
+</install>
